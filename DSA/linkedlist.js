@@ -1,4 +1,4 @@
-//Linked list algorithms 
+//Linked list algorithms
 class Node { 
 
     constructor(val) {
@@ -64,4 +64,29 @@ const fillValues = (head, values) => {
     if(head == null) return;
     values.push(head.val); 
     fillValues(head.next, values);
+}
+
+
+
+//Sum List Problem 
+
+//Iterative solution
+const sumList = (head) => {
+    let sum = 0;
+    let current = head;
+
+    while(current != null) {
+
+        sum += current.val;
+        current = current.next;
+    }
+
+    return sum;
+}
+
+
+//Recursive solution 
+const sumList = (head) => {
+    if(head == null) return 0;
+    return head.val + sumList(head.next)
 }
