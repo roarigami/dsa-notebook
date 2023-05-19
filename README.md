@@ -1,2 +1,2 @@
 # Javascript
-CP algos w/ javascript 
+Competitive programming algos w/ javascript 
