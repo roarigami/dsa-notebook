@@ -1,3 +1,4 @@
+//Linked list algorithms 
 class Node { 
 
     constructor(val) {
