@@ -90,3 +90,42 @@ const sumList = (head) => {
     if(head == null) return 0;
     return head.val + sumList(head.next);
 }
+
+
+//Reverse Linked list 
+
+//Iterative
+const reverseList = (head) => {
+    let prev = null;
+    let current = head;
+    while(current != null) {
+        const next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+
+    return prev;
+
+};
+
+
+//Recursive
+const reverseList = (head, prev = null) => {
+    if (head == null) return prev;
+
+    const next = head.next;
+    head.next = prev;
+    reverseList(next, head);
+}
+
+
+
+//Zipper List 
+
+//Iterative 
+
+
+
+
+//Recursive 
