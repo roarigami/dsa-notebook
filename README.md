@@ -1,2 +1,3 @@
 # Javascript
-Competitive programming algos w/ javascript 
+DS & algos w/ javascript 
+Basics to competitive.
