@@ -28,7 +28,6 @@ c.right = f;
 
 //iterative solution 
 const depthFirstValues = (root) => {
-
     const stack  = [ root ];
 
     while(stack.length > 0) {
@@ -37,7 +36,6 @@ const depthFirstValues = (root) => {
 
         if (current.right) stack.push(current.right); 
         if (current.left) stack.push(current.left);
-
     }
 
 };
@@ -47,7 +45,7 @@ const depthFirstValues = (root) => {
     if(root == null) return [];
     const leftValues = depthFirstValues(root.left);
     const rightValues = depthFirstValues(root.right);
-    return [ root.val ... leftValues, ... rightValues ] 
+    return [ root.val, ... leftValues, ... rightValues ] 
 };
 
 
@@ -66,8 +64,8 @@ const breadthFirstValues = (root) => {
         const current = queue.shift();
         values.push(current.val);
 
-        if(cuurent.left != null) queue.push(current.left);
-        if(cuurent.right != null) queue.push(current.right);
+        if(current.left != null) queue.push(current.left);
+        if(current.right != null) queue.push(current.right);
     }
 
     return values;
@@ -79,7 +77,7 @@ const breadthFirstValues = (root) => {
 //Tree Includes 
 
 //Iterative breadth first solution 
-const treeIncludes() = (root, target) => {
+const treeIncludes = (root, target) => {
 
     if(root == null) return false;
 
@@ -99,7 +97,7 @@ const treeIncludes() = (root, target) => {
 
 
 //Recursive Depth first
-const treeIncludes() = (root, target) => {
+const treeIncludes = (root, target) => {
     if(root == null) return false;
     if(root.val == target) return true;
     return treeIncludes(root.left, target) || treeIncludes(root.right, target); 
