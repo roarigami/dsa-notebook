@@ -76,8 +76,31 @@ const breadthFirstValues = (root) => {
 
 
 
-//Recursive Solution 
-const breadthFirstValues = (root) => {
+//Tree Includes 
+
+//Iterative breadth first solution 
+const treeIncludes() = (root, target) => {
+
+    if(root == null) return false;
+
+    const queue = [ root ];
+    while(queue.length > 0) {
+        if(current.val == target) {
+            return true;
+        }
+
+        if(cuurent.left) queue.push(current.left);
+        if(cuurent.right) queue.push(current.right);
+    }
+
+    return false;
+
+};
 
 
+//Recursive Depth first
+const treeIncludes() = (root, target) => {
+    if(root == null) return false;
+    if(root.val == target) return true;
+    return treeIncludes(root.left, target) || treeIncludes(root.right, target);
 };
