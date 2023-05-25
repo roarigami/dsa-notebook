@@ -102,5 +102,30 @@ const treeIncludes() = (root, target) => {
 const treeIncludes() = (root, target) => {
     if(root == null) return false;
     if(root.val == target) return true;
-    return treeIncludes(root.left, target) || treeIncludes(root.right, target);
+    return treeIncludes(root.left, target) || treeIncludes(root.right, target); 
+};
+
+
+
+//Tree Sum 
+
+//Breadth first Iterative
+const treeSum = (root) => {
+    if(root == null) return 0;
+    let sumTotal = 0; 
+
+    const queue = [ root ];
+    while(queue.length > 0) {
+        const current = queue.shift();
+        sumTotal += current.val; 
+        if(current.left != null) queue.push(current.left);
+        if(current.right != null) queue.push(current.right);
+    }
+    return sumTotal;
+};
+
+//Depth First Recursive
+const treeSum = (root) => {
+    if(root == null) return 0;
+    return root.val + treeSum(root.left) + treeSum(root.right);
 };
