@@ -172,3 +172,13 @@ const treeMinValue = (root) => {
 
     return Math.min(root.val, leftMin, rightMin);
 }
+
+
+
+//Max root to leaf path sum 
+const maxPathSum = (root) => {
+    if(roo == null) return -Infinity;
+    if(root.left == null && root.right == null) return root.val;
+    const maxChildPathSum = Math.max( maxPathSum(root.left), maxPathSum(root.right) );
+    return root.val + maxChildPathSum;
+};
