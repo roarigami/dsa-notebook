@@ -24,7 +24,7 @@ c.right = f;
 
 
 
-//Depth first traversal
+//Depth first traversal (implemented with stacks)
 
 //iterative solution 
 const depthFirstValues = (root) => {
@@ -40,7 +40,7 @@ const depthFirstValues = (root) => {
 
     }
 
-}
+};
 
 //Recursive solution
 const depthFirstValues = (root) => {
@@ -48,7 +48,36 @@ const depthFirstValues = (root) => {
     const leftValues = depthFirstValues(root.left);
     const rightValues = depthFirstValues(root.right);
     return [ root.val ... leftValues, ... rightValues ] 
-}
+};
 
 
 
+//Breadth first traversal (implemnted with queues)
+
+
+//Iterative solution 
+const breadthFirstValues = (root) => {
+    if(root == null) return [];
+
+    const values = [];
+    const queue = [ root ];
+
+    while(queue.length > 0) {
+        const current = queue.shift();
+        values.push(current.val);
+
+        if(cuurent.left != null) queue.push(current.left);
+        if(cuurent.right != null) queue.push(current.right);
+    }
+
+    return values;
+};
+
+
+
+
+//Recursive Solution 
+const breadthFirstValues = (root) => {
+
+
+};
