@@ -129,3 +129,46 @@ const treeSum = (root) => {
     if(root == null) return 0;
     return root.val + treeSum(root.left) + treeSum(root.right);
 };
+
+
+//Tree min value 
+
+//Iterative depth first 
+const treeMinValue = (root) => {
+    let smallest = Infinity;
+    const stack = [ root ];
+
+    while(stack.length > 0) {
+        const current = stack.pop();
+        if(current.val < smallest) smallest = current.val;
+
+        if(current.left != null) stack.push(current.left);
+        if(current.right != null) stack.oush(current.right);
+    }
+    return smallest; 
+};
+
+
+//Breadth first iterative 
+const treeMinValue = (root) => {
+    let smallest = Infinity;
+    const queue = [ root ];
+
+    while(queue.length > 0) {
+        const current = queue.shift();
+        if(current.val < smallest) smallest = current.val;
+
+        if(current.left != null) queue.push(current.left);
+        if(current.right != null) queue.oush(current.right);
+    }
+    return smallest; 
+};
+
+//recursive 
+const treeMinValue = (root) => {
+    if(root == null) return Infinity;
+    const leftMin = treeMinValue(root.left);
+    const rightMin = treeMinValue(roor.right);
+
+    return Math.min(root.val, leftMin, rightMin);
+}
