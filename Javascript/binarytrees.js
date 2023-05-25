@@ -157,7 +157,7 @@ const treeMinValue = (root) => {
         if(current.val < smallest) smallest = current.val;
 
         if(current.left != null) queue.push(current.left);
-        if(current.right != null) queue.oush(current.right);
+        if(current.right != null) queue.push(current.right);
     }
     return smallest; 
 };
@@ -166,7 +166,7 @@ const treeMinValue = (root) => {
 const treeMinValue = (root) => {
     if(root == null) return Infinity;
     const leftMin = treeMinValue(root.left);
-    const rightMin = treeMinValue(roor.right);
+    const rightMin = treeMinValue(root.right);
 
     return Math.min(root.val, leftMin, rightMin);
 }
@@ -175,7 +175,7 @@ const treeMinValue = (root) => {
 
 //Max root to leaf path sum 
 const maxPathSum = (root) => {
-    if(roo == null) return -Infinity;
+    if(root == null) return -Infinity;
     if(root.left == null && root.right == null) return root.val;
     const maxChildPathSum = Math.max( maxPathSum(root.left), maxPathSum(root.right) );
     return root.val + maxChildPathSum;
