@@ -37,3 +37,24 @@ const selectionSort = (array) => {
 
 let arr2 = [1, 54, 32, 98, 2132, 09, 143, 1627, 735];
 console.log(selectionSort(arr2));
+
+
+
+//Insertion Sort
+const insertionSort = (array) => {
+    let n = array.length;
+    for(let i = 1; i < n; i++) {
+        let current = array[i];
+        let j = i - 1;
+        while(j > -1 && (current < array[j])) {
+            array[j + 1] = array[j];
+            j--;
+        }
+        array[j + 1] = current;
+    }
+
+return array;
+}
+
+let arr3 = [3, 4343, 9438, 19383, 8437, 01938403, 54, 0];
+console.log(insertionSort(arr3));
