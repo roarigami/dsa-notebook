@@ -1,60 +1,92 @@
-//Bubble sort 
-const bubbleSort = (array) => {
-    let n = array.length;
-    for(let i = 0; i < n; i++) {
-        for(let j = 0; j < n; j++){
-            if(array[j] > array[j + 1]) {
-                let temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
+// //Bubble sort 
+// const bubbleSort = (array) => {
+//     let n = array.length;
+//     for(let i = 0; i < n; i++) {
+//         for(let j = 0; j < n; j++){
+//             if(array[j] > array[j + 1]) {
+//                 let temp = array[j];
+//                 array[j] = array[j + 1];
+//                 array[j + 1] = temp;
+//             }
+//         }
+//     }
+//     return array;
+// }
+// let arr = [84,12,65,43,29,94,82,53,4];
+// console.log(bubbleSort(arr));
+
+
+// //Selection Sort 
+// const selectionSort = (array) => {
+//     let n = array.length;
+//     for(let i = 0; i < n; i++){
+//         let min = i;
+//         for(let j = i + 1; j < n; j++) {
+//             if(array[j] < array[min]) {
+//                 min = j;
+//             }
+//         }
+//         if(min != i) {
+//             let temp = array[i];
+//             array[i] = array[min];
+//             array[min] = temp;
+//         }
+//     }
+//     return array;
+// }
+
+// let arr2 = [1, 54, 32, 98, 2132, 09, 143, 1627, 735];
+// console.log(selectionSort(arr2));
+
+
+
+// //Insertion Sort
+// const insertionSort = (array) => {
+//     let n = array.length;
+//     for(let i = 1; i < n; i++) {
+//         let current = array[i];
+//         let j = i - 1;
+//         while(j > -1 && (current < array[j])) {
+//             array[j + 1] = array[j];
+//             j--;
+//         }
+//         array[j + 1] = current;
+//     }
+
+// return array;
+// }
+
+// let arr3 = [3, 4343, 9438, 19383, 8437, 1938403, 54, 0];
+// console.log(insertionSort(arr3));
+
+
+
+//Merge sort 
+
+const merge = (left, right) => {
+    let arr = [];
+    while(left.length && right.length) {
+        if(left[0] < right[0]) {
+            arr.push(left.shift())
+        } else {
+            arr.push(right.shift)
         }
     }
-    return array;
-}
-let arr = [84,12,65,43,29,94,82,53,4];
-console.log(bubbleSort(arr));
+    return [...arr, ...left, ...right];
+};
 
+const mergeSort = (array) => {
+    const half = array.length / 2;
 
-//Selection Sort 
-const selectionSort = (array) => {
-    let n = array.length;
-    for(let i = 0; i < n; i++){
-        let min = i;
-        for(let j = i + 1; j < n; j++) {
-            if(array[j] < array[min]) {
-                min = j;
-            }
-        }
-        if(min != i) {
-            let temp = array[i];
-            array[i] = array[min];
-            array[min] = temp;
-        }
-    }
-    return array;
-}
-
-let arr2 = [1, 54, 32, 98, 2132, 09, 143, 1627, 735];
-console.log(selectionSort(arr2));
-
-
-
-//Insertion Sort
-const insertionSort = (array) => {
-    let n = array.length;
-    for(let i = 1; i < n; i++) {
-        let current = array[i];
-        let j = i - 1;
-        while(j > -1 && (current < array[j])) {
-            array[j + 1] = array[j];
-            j--;
-        }
-        array[j + 1] = current;
+    if(array.length < 2) {
+        return array;
     }
 
-return array;
-}
+    const left = array.splice(0, half);
+    return merge(mergeSort(left), mergeSort(array));
+};
 
-let arr3 = [3, 4343, 9438, 19383, 8437, 01938403, 54, 0];
-console.log(insertionSort(arr3));
+
+
+let arr4 = [42342434, 7687687, 124234234, 3453, 5675, 2355, 576, 87, 5, 0];
+console.log(mergeSort(arr4));
