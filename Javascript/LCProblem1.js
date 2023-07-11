@@ -1,4 +1,5 @@
-//Longest Substring without repeating characters 
+//3. Longest Substring without repeating characters 
+//Difficulty: Medium 
 
 const lengthOfLongestSubstring = (s) => {
     charList = new Set();
