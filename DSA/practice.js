@@ -18,3 +18,10 @@ const isPrime = (num) => {
 }
 
 console.log(isPrime(7));
+
+
+//Simple code to check if a number is a perfect square
+const isPerfectSquare = (num) => {
+  return Math.sqrt(num) % 1 === 0;
+}
+console.log(isPerfectSquare(64));
