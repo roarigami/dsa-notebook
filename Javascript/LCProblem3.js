@@ -1,4 +1,5 @@
 //128. Longest Consecutive Sequence 
+//Incomplete
 
 const longestConsecutive = (nums) => {
     let numSet = new Set(nums);
