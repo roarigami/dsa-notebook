@@ -7,3 +7,21 @@ const addTwo = (num1, num2) => {
 }
 
 console.log(addTwo(4,3))
+
+
+//Simple code to check if a number is prime or not 
+const isPrime = (num) => {
+  for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+    if(num % i === 0) return false;
+  }
+  return num > 1;
+}
+
+console.log(isPrime(7));
+
+
+//Simple code to check if a number is a perfect square
+const isPerfectSquare = (num) => {
+  return Math.sqrt(num) % 1 === 0;
+}
+console.log(isPerfectSquare(64));
