@@ -1,7 +1,7 @@
 #include <iostream> 
-/*Incomplete*/
-
 using namespace std; 
+
+/*Algorithm Incomplete*/
 
 struct Node { 
     int data;
