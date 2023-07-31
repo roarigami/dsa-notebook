@@ -2,11 +2,11 @@
 //Has path problem 
 
 //depth first 
-const hasPath = (graph, src, dst) => {
+const hasPathDepth = (graph, src, dst) => {
     if(src == dst) return true;
 
     for(let neighbor of graph[src]) {
-        if(hasPath(graph, neighbor, dst) == true) {
+        if(hasPathDepth(graph, neighbor, dst) == true) {
             return true;
         }
     }
@@ -16,7 +16,7 @@ const hasPath = (graph, src, dst) => {
 
 
 //breadth first (iterative obviously)
-const hasPath = (graph, src, dst) => {
+const hasPathBreadth = (graph, src, dst) => {
    const queue = [ src ];
 
    while(queue.length > 0) {
