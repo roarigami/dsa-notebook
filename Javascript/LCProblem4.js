@@ -7,7 +7,7 @@ let groupAnagrams = function(strs) {
     let res = {};
 
     for(wrd of strs) {
-    let refined = wrd.split("").sort().join("");
+      let refined = wrd.split("").sort().join("");
         if (res[refined]) {
         res[refined].push(wrd);
         } else {
