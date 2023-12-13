@@ -1,7 +1,7 @@
 //36. Valid Sudoku  
 //Difficulty: Medium 
 
-var isValidSudoku = function(board) {
+let isValidSudoku = function(board) {
     
     let set = new Set()
     
