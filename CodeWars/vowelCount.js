@@ -7,6 +7,14 @@ The input string will only consist of lower case letters and/or spaces
 */
 
 function getCount(str) {
+    let vowelsCount = 0;
+    let vowel = ['a', 'e', 'i', 'o', 'u'];
 
-    
+    for(letter of str) {
+        if(vowel.includes(letter)) {
+            vowelsCount++;
+        }
+    }
+
+    return vowelsCount;
 }
