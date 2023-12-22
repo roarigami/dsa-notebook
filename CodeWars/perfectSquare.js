@@ -13,3 +13,9 @@ function isSquare(n) {
       }
       return false; // fix me
 }
+
+
+//Short solution 
+function isSquare(n) {
+    return Math.sqrt(n) % 1 === 0;
+}
