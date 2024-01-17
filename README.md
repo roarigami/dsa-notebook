@@ -9,5 +9,5 @@ Don't reinvent the wheel, just study the fundamentals. Happy coding.
 Leet Code problem set solutions.
 All solutions are submission ready.
 Each solution will be followed by a detailed and deconstructed explanation of the algorithm. <br>
-Leecode question order does not correspond to Leetcode question indexes. They are ordered at random. Actual question number will be commented at the top of the file. 
+Leetcode question order does not correspond to Leetcode question indexes. They are ordered at random. Actual question number will be commented at the top of the file. 
 >>>>>>> LeetCode/main
